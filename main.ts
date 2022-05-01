@@ -1,12 +1,8 @@
 namespace maxBot {
-    /**
-     * Initialize Max Bot
-     */
-    //% blockID=maxbotInitBlock
-    //% block="Max:Bot init"
-    export function initMaxbot() : void {
 
-    }
+    const leftMotor = AnalogPin.P8, rightMotor = AnalogPin.P12;
+    let leftStrip = neopixel.create(DigitalPin.P5, 10, NeoPixelMode.RGB);
+    let rightStrip = neopixel.create(DigitalPin.P11, 10, NeoPixelMode.RGB);
 
     /**
      * Make max:bot move forward at a set speed
@@ -16,8 +12,20 @@ namespace maxBot {
     //% speed.min=1 speed.max=90
     export function forward(speed : number) : void {
         speed |= 0;
-        pins.servoWritePin(AnalogPin.P8, 90+speed)
-        pins.servoWritePin(AnalogPin.P12, 90-speed)
+        pins.servoWritePin(leftMotor, 90+speed);
+        pins.servoWritePin(rightMotor, 90-speed);
+    }
+
+    /**
+     * Make max:bot move backward at a set speed
+     */
+    //% blockID=maxbotBackwardSpeed
+    //% block="Max:Bot reverse at $speed"
+    //% speed.min=1 speed.max=90
+    export function backward(speed: number): void {
+        speed |= 0;
+        pins.servoWritePin(leftMotor, 90 + speed);
+        pins.servoWritePin(rightMotor, 90 - speed);
     }
 
     /**
@@ -28,8 +36,8 @@ namespace maxBot {
     //% speed.min=1 speed.max=90
     export function turnLeft(speed : number) : void {
         speed |= 0;
-        pins.servoWritePin(AnalogPin.P8, 90 - speed)
-        pins.servoWritePin(AnalogPin.P12, 90 - speed)
+        pins.servoWritePin(leftMotor, 90 - speed);
+        pins.servoWritePin(rightMotor, 90 - speed);
     }
 
     /**
@@ -40,8 +48,8 @@ namespace maxBot {
     //% speed.min=1 speed.max=90
     export function turnRight(speed: number) : void {
         speed |= 0;
-        pins.servoWritePin(AnalogPin.P8, 90 + speed)
-        pins.servoWritePin(AnalogPin.P12, 90 + speed)
+        pins.servoWritePin(leftMotor, 90 + speed);
+        pins.servoWritePin(rightMotor, 90 + speed);
     }
 
     /**
@@ -52,7 +60,7 @@ namespace maxBot {
     //% speed.min=-90 speed.max=90
     export function setLeftWheelSpeed(speed:number) : void {
         speed |= 0;
-        pins.servoWritePin(AnalogPin.P8, speed);
+        pins.servoWritePin(leftMotor, speed);
     }
     
     /**
@@ -63,6 +71,10 @@ namespace maxBot {
     //% speed.min=-90 speed.max=90
     export function setRightWheelSpeed(speed: number): void {
         speed |= 0;
-        pins.servoWritePin(AnalogPin.P12, speed);
+        pins.servoWritePin(rightMotor, speed);
+    }
+
+    export function getLeftStrip() : neopixel.Strip{
+        return leftStrip;
     }
 }
