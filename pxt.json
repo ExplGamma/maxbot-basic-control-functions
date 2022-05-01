@@ -1,5 +1,5 @@
 {
-    "name": "basic-control-functions",
+    "name": "maxbot-functions",
     "description": "",
     "dependencies": {
         "core": "*",
