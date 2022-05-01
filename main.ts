@@ -89,6 +89,6 @@ namespace maxBot {
     //% blockID=maxbotGetRightStrip
     //% block="Max:Bot right strip"
     export function getRightStrip(): neopixel.Strip {
-        return leftStrip;
+        return rightStrip;
     }
 }
