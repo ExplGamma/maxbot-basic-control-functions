@@ -74,7 +74,21 @@ namespace maxBot {
         pins.servoWritePin(rightMotor, speed);
     }
 
+    /**
+     * Get left strip on max:bot
+     */
+    //% blockID=maxbotGetLeftStrip
+    //% block="Max:Bot left strip"
     export function getLeftStrip() : neopixel.Strip{
+        return leftStrip;
+    }
+    
+    /**
+     * Get right strip on max:bot
+     */
+    //% blockID=maxbotGetRightStrip
+    //% block="Max:Bot right strip"
+    export function getRightStrip(): neopixel.Strip {
         return leftStrip;
     }
 }
