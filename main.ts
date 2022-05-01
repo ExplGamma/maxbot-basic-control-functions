@@ -1,6 +1,9 @@
 namespace maxBot {
-
+    const speakerPin = AnalogPin.P0;
+    const trigPin = DigitalPin.P1, echoPin = DigitalPin.P2;
     const leftMotor = AnalogPin.P8, rightMotor = AnalogPin.P12;
+    const leftButton = DigitalPin.P16, rightButton = DigitalPin.P13;
+    const leftLightSensor = DigitalPin.P15, rightLightSensor = DigitalPin.P14;
     let leftStrip = neopixel.create(DigitalPin.P5, 10, NeoPixelMode.RGB);
     let rightStrip = neopixel.create(DigitalPin.P11, 10, NeoPixelMode.RGB);
 
@@ -90,5 +93,50 @@ namespace maxBot {
     //% block="Max:Bot right strip"
     export function getRightStrip(): neopixel.Strip {
         return rightStrip;
+    }
+
+    /**
+     * Returns if the left button is pushed or not
+     */
+    //% blockID=maxbotLeftButtonPushed
+    //% block="Max:Bot is left button pushed?"
+    export function isLeftButtonPushed () : boolean {
+        return pins.digitalReadPin(leftButton) == 1;
+    }
+
+    /**
+     * Returns if the right button is pushed or not
+     */
+    //% blockID=maxbotLeftButtonPushed
+    //% block="Max:Bot is right button pushed?"
+    export function isRightButtonPushed(): boolean {
+        return pins.digitalReadPin(rightButton) == 1;
+    }
+
+    /**
+     * Returns if the left light sensor dectects light
+     */
+    //% blockID=maxbotLeftLightSensorLight
+    //% block="Max:Bot left light sensor dectects light?"
+    export function leftLightSensorLight() : boolean {
+        return pins.digitalReadPin(leftLightSensor) == 0;
+    }
+
+    /**
+     * Returns if the right light sensor dectects light
+     */
+    //% blockID=maxbotRightLightSensorLight
+    //% block="Max:Bot right light sensor dectects light?"
+    export function rightLightSensorLight(): boolean {
+        return pins.digitalReadPin(rightLightSensor) == 0;
+    }
+
+    /**
+     * Returns distance sensed by ultrasonic sensor in centimeters
+     */
+    //% blockID=maxbotUltrasonicSensor
+    //% block="Max:Bot ultrasonic sensor distance"
+    export function ultrasonicDistance(): number {
+        return sonar.ping(trigPin, echoPin, PingUnit.Centimeters);
     }
 }
