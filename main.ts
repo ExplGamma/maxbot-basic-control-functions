@@ -20,6 +20,15 @@ namespace maxBot {
         pins.servoWritePin(leftMotor, 90 + leftWheel);
         pins.servoWritePin(rightMotor, 90 - rightWheel);
     }
+    /**
+     * Stops the max:bot
+     */
+    //% blockID=maxbotStop
+    //% block="Max:Bot stop"
+    export function maxbotStop() : void {
+        pins.servoWritePin(leftMotor, 90);
+        pins.servoWritePin(rightMotor, 90);
+    }
 
     /**
      * Make max:bot move forward at a set speed
