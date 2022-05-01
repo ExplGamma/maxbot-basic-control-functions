@@ -1,3 +1,5 @@
-basic.forever(function () {
-	
-})
+namespace maxbotMovement {
+    export function forward() : void {
+        
+    }
+}
