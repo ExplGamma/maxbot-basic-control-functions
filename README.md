@@ -1,5 +1,5 @@
 
-> Open this page at [https://explgamma.github.io/maxbot-basic-control-functions/](https://explgamma.github.io/maxbot-basic-control-functions/)
+> Open this page at [https://explgamma.github.io/maxbot-makecode-basic-control-functions/](https://explgamma.github.io/maxbot-makecode-basic-control-functions/)
 
 ## Use as Extension
 
