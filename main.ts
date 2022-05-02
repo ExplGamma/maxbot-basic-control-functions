@@ -137,19 +137,19 @@ namespace maxBot {
     }
 
     /**
-     * Returns if the left light sensor dectects light
+     * Returns if the left light sensor detects light
      */
     //% blockID=maxbotLeftLightSensorLight
-    //% block="Max:Bot left light sensor dectects light?"
+    //% block="Max:Bot left light sensor detects light?"
     export function leftLightSensorLight() : boolean {
         return pins.digitalReadPin(leftLightSensor) == 0;
     }
 
     /**
-     * Returns if the right light sensor dectects light
+     * Returns if the right light sensor detects light
      */
     //% blockID=maxbotRightLightSensorLight
-    //% block="Max:Bot right light sensor dectects light?"
+    //% block="Max:Bot right light sensor detects light?"
     export function rightLightSensorLight(): boolean {
         return pins.digitalReadPin(rightLightSensor) == 0;
     }
