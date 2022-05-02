@@ -18,7 +18,7 @@ namespace maxBot {
         leftWheel |= 0; 
         rightWheel |= 0;
         pins.servoWritePin(leftMotor, 90 + leftWheel);
-        pins.servoWritePin(rightMotor, 90 - rightWheel);
+        pins.servoWritePin(rightMotor, 90 + rightWheel);
     }
     /**
      * Stops the max:bot
@@ -39,7 +39,7 @@ namespace maxBot {
     export function forward(speed : number) : void {
         speed |= 0;
         pins.servoWritePin(leftMotor, 90+speed);
-        pins.servoWritePin(rightMotor, 90-speed);
+        pins.servoWritePin(rightMotor, 90+speed);
     }
 
     /**
@@ -50,7 +50,7 @@ namespace maxBot {
     //% speed.min=1 speed.max=90
     export function backward(speed: number): void {
         speed |= 0;
-        pins.servoWritePin(leftMotor, 90 + speed);
+        pins.servoWritePin(leftMotor, 90 - speed);
         pins.servoWritePin(rightMotor, 90 - speed);
     }
 
@@ -63,7 +63,7 @@ namespace maxBot {
     export function turnLeft(speed : number) : void {
         speed |= 0;
         pins.servoWritePin(leftMotor, 90 - speed);
-        pins.servoWritePin(rightMotor, 90 - speed);
+        pins.servoWritePin(rightMotor, 90 + speed);
     }
 
     /**
@@ -75,7 +75,7 @@ namespace maxBot {
     export function turnRight(speed: number) : void {
         speed |= 0;
         pins.servoWritePin(leftMotor, 90 + speed);
-        pins.servoWritePin(rightMotor, 90 + speed);
+        pins.servoWritePin(rightMotor, 90 - speed);
     }
 
     /**
