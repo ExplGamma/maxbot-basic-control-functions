@@ -28,4 +28,5 @@ This image may take a few minutes to refresh.
 #### Metadata (used for search, rendering)
 
 * for PXT/microbit, dfrobot, maxbot, makecode, max:bot
-<script src="https://makecode.com/gh-pages-embed.js"></script><script>makeCodeRender("{{ site.makecode.home_url }}", "{{ site.github.owner_name }}/{{ site.github.repository_name }}");</script>
+<script src="https://makecode.com/gh-pages-embed.js"></script>
+<script>makeCodeRender("{{ site.makecode.home_url }}", "{{ site.github.owner_name }}/{{ site.github.repository_name }}");</script>
