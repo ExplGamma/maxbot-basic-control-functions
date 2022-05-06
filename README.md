@@ -1,3 +1,4 @@
+This is an extension designed to simplify the usage of a Max:Bot used with Micro:Bits coded through Microsoft Makecode. The extension adds a number of simle yet useful blocks to simplify the usage of the robots so anyone of any age can work with them.
 
 > Open this page at [https://explgamma.github.io/maxbot-makecode-basic-control-functions/](https://explgamma.github.io/maxbot-makecode-basic-control-functions/)
 
