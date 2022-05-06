@@ -16,6 +16,8 @@ namespace maxBot {
     export function setWheelSpeeds(leftWheel : number, rightWheel : number) : void {
         leftWheel |= 0; 
         rightWheel |= 0;
+        Math.constrain(leftWheel, -90, 90);
+        Math.constrain(leftWheel, -90, 90);
         pins.servoWritePin(leftMotor, 90 + leftWheel);
         pins.servoWritePin(rightMotor, 90 + rightWheel);
     }
@@ -38,6 +40,7 @@ namespace maxBot {
     //% speed.min=1 speed.max=90
     export function forward(speed : number) : void {
         speed |= 0;
+        Math.constrain(speed, 0, 90);
         pins.servoWritePin(leftMotor, 90+speed);
         pins.servoWritePin(rightMotor, 90+speed);
     }
@@ -50,6 +53,7 @@ namespace maxBot {
     //% speed.min=1 speed.max=90
     export function backward(speed: number): void {
         speed |= 0;
+        Math.constrain(speed, 0, 90);
         pins.servoWritePin(leftMotor, 90 - speed);
         pins.servoWritePin(rightMotor, 90 - speed);
     }
@@ -62,6 +66,7 @@ namespace maxBot {
     //% speed.min=1 speed.max=90
     export function turnLeft(speed : number) : void {
         speed |= 0;
+        Math.constrain(speed, 0, 90);
         pins.servoWritePin(leftMotor, 90 - speed);
         pins.servoWritePin(rightMotor, 90 + speed);
     }
@@ -74,6 +79,7 @@ namespace maxBot {
     //% speed.min=1 speed.max=90
     export function turnRight(speed: number) : void {
         speed |= 0;
+        Math.constrain(speed, 0, 90);
         pins.servoWritePin(leftMotor, 90 + speed);
         pins.servoWritePin(rightMotor, 90 - speed);
     }
@@ -86,7 +92,8 @@ namespace maxBot {
     //% speed.min=-90 speed.max=90
     export function setLeftWheelSpeed(speed:number) : void {
         speed |= 0;
-        pins.servoWritePin(leftMotor, speed);
+        Math.constrain(speed, 0, 90);
+        pins.servoWritePin(leftMotor, 90+speed);
     }
     
     /**
@@ -97,7 +104,8 @@ namespace maxBot {
     //% speed.min=-90 speed.max=90
     export function setRightWheelSpeed(speed: number): void {
         speed |= 0;
-        pins.servoWritePin(rightMotor, speed);
+        Math.constrain(speed, 0, 90);
+        pins.servoWritePin(rightMotor, 90+speed);
     }
 
     /**
