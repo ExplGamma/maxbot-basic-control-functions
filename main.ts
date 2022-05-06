@@ -7,7 +7,6 @@ namespace maxBot {
     let leftStrip = neopixel.create(DigitalPin.P5, 10, NeoPixelMode.RGB);
     let rightStrip = neopixel.create(DigitalPin.P11, 10, NeoPixelMode.RGB);
 
-
     /**
      * Set the speed of both motors
      */
@@ -20,6 +19,7 @@ namespace maxBot {
         pins.servoWritePin(leftMotor, 90 + leftWheel);
         pins.servoWritePin(rightMotor, 90 + rightWheel);
     }
+    
     /**
      * Stops the max:bot
      */
