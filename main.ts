@@ -25,7 +25,7 @@ namespace maxBot {
      */
     //% blockID=maxbotStop
     //% block="max:bot stop"
-    export function maxbotStop() : void {
+    export function stop() : void {
         pins.servoWritePin(leftMotor, 90);
         pins.servoWritePin(rightMotor, 90);
     }
