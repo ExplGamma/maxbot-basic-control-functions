@@ -8,10 +8,10 @@ namespace maxBot {
     let rightStrip = neopixel.create(DigitalPin.P11, 10, NeoPixelMode.RGB);
 
     /**
-     * Set the speed of both motors
+     * Function to set the speed of both motors.
      */
     //% blockID=maxbotSetWheels
-    //% block="Max:Bot set left : $leftWheel right : $rightWheel"
+    //% block="max:bot set left : $leftWheel right : $rightWheel"
     //% leftWheel.min=-90 leftWheel.max=90 rightWheel.min=-90 rightWheel.max=90
     export function setWheelSpeeds(leftWheel : number, rightWheel : number) : void {
         leftWheel |= 0; 
@@ -21,10 +21,10 @@ namespace maxBot {
     }
     
     /**
-     * Stops the max:bot
+     * Stops the max:bot. Sets both motors to 0 speed.
      */
     //% blockID=maxbotStop
-    //% block="Max:Bot stop"
+    //% block="max:bot stop"
     export function maxbotStop() : void {
         pins.servoWritePin(leftMotor, 90);
         pins.servoWritePin(rightMotor, 90);
@@ -34,7 +34,7 @@ namespace maxBot {
      * Make max:bot move forward at a set speed
      */
     //% blockID=maxbotForwardSpeed
-    //% block="Max:Bot forward at $speed"
+    //% block="max:bot forward at $speed"
     //% speed.min=1 speed.max=90
     export function forward(speed : number) : void {
         speed |= 0;
@@ -46,7 +46,7 @@ namespace maxBot {
      * Make max:bot move backward at a set speed
      */
     //% blockID=maxbotBackwardSpeed
-    //% block="Max:Bot reverse at $speed"
+    //% block="max:bot reverse at $speed"
     //% speed.min=1 speed.max=90
     export function backward(speed: number): void {
         speed |= 0;
@@ -58,7 +58,7 @@ namespace maxBot {
      * Make max:bot turn left at a set speed
      */
     //% blockID=maxbotLeftSpeed
-    //% block="Max:Bot turn left at $speed"
+    //% block="max:bot turn left at $speed"
     //% speed.min=1 speed.max=90
     export function turnLeft(speed : number) : void {
         speed |= 0;
@@ -70,7 +70,7 @@ namespace maxBot {
      * Make max:bot turn right at a set speed
      */
     //% blockID=maxbotRightSpeed
-    //% block="Max:Bot turn right at $speed"
+    //% block="max:bot turn right at $speed"
     //% speed.min=1 speed.max=90
     export function turnRight(speed: number) : void {
         speed |= 0;
@@ -82,7 +82,7 @@ namespace maxBot {
      * Set max:bot left wheel speed
      */
     //% blockID=maxbotLeftWheelSpeed
-    //% block="Max:Bot set left wheel to $speed"
+    //% block="max:bot set left wheel to $speed"
     //% speed.min=-90 speed.max=90
     export function setLeftWheelSpeed(speed:number) : void {
         speed |= 0;
@@ -93,7 +93,7 @@ namespace maxBot {
      * Set max:bot right wheel speed
      */
     //% blockID=maxbotRightWheelSpeed
-    //% block="Max:Bot set right wheel to $speed"
+    //% block="max:bot set right wheel to $speed"
     //% speed.min=-90 speed.max=90
     export function setRightWheelSpeed(speed: number): void {
         speed |= 0;
@@ -104,7 +104,7 @@ namespace maxBot {
      * Get left strip on max:bot
      */
     //% blockID=maxbotGetLeftStrip
-    //% block="Max:Bot left strip"
+    //% block="max:bot left strip"
     export function getLeftStrip() : neopixel.Strip{
         return leftStrip;
     }
@@ -113,7 +113,7 @@ namespace maxBot {
      * Get right strip on max:bot
      */
     //% blockID=maxbotGetRightStrip
-    //% block="Max:Bot right strip"
+    //% block="max:bot right strip"
     export function getRightStrip(): neopixel.Strip {
         return rightStrip;
     }
@@ -122,7 +122,7 @@ namespace maxBot {
      * Returns if the left button is pushed or not
      */
     //% blockID=maxbotLeftButtonPushed
-    //% block="Max:Bot is left button pushed?"
+    //% block="max:bot is left button pushed?"
     export function isLeftButtonPushed () : boolean {
         return pins.digitalReadPin(leftButton) == 1;
     }
@@ -131,7 +131,7 @@ namespace maxBot {
      * Returns if the right button is pushed or not
      */
     //% blockID=maxbotLeftButtonPushed
-    //% block="Max:Bot is right button pushed?"
+    //% block="max:bot is right button pushed?"
     export function isRightButtonPushed(): boolean {
         return pins.digitalReadPin(rightButton) == 1;
     }
@@ -140,7 +140,7 @@ namespace maxBot {
      * Returns if the left light sensor detects light
      */
     //% blockID=maxbotLeftLightSensorLight
-    //% block="Max:Bot left light sensor detects light?"
+    //% block="max:bot left light sensor detects light?"
     export function leftLightSensorLight() : boolean {
         return pins.digitalReadPin(leftLightSensor) == 0;
     }
@@ -149,7 +149,7 @@ namespace maxBot {
      * Returns if the right light sensor detects light
      */
     //% blockID=maxbotRightLightSensorLight
-    //% block="Max:Bot right light sensor detects light?"
+    //% block="max:bot right light sensor detects light?"
     export function rightLightSensorLight(): boolean {
         return pins.digitalReadPin(rightLightSensor) == 0;
     }
@@ -158,7 +158,7 @@ namespace maxBot {
      * Returns distance sensed by ultrasonic sensor in centimeters
      */
     //% blockID=maxbotUltrasonicSensor
-    //% block="Max:Bot ultrasonic sensor distance"
+    //% block="max:bot ultrasonic sensor distance"
     export function ultrasonicDistance(): number {
         return sonar.ping(trigPin, echoPin, PingUnit.Centimeters);
     }
